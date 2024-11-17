@@ -1,15 +1,12 @@
 import { Fragment } from "react";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 
-import { getListPokemons } from "../services";
 import Header from "../components/layouts/header";
 import ListPokemons from "../components/layouts/list-pokemon";
-
-const pokemonsQueryOptions = queryOptions({
-  queryKey: ["pokemons-list"],
-  queryFn: () => getListPokemons(),
-});
+import { PaginationControls, SearchInput } from "../components/ui";
+import useFilterPokemons, {
+  pokemonsQueryOptions,
+} from "../hooks/useFilterPokemons";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -21,16 +18,30 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const {
     isLoading,
-    data: { results },
-  } = useSuspenseQuery(pokemonsQueryOptions);
+    handleSearch,
+    paginatedPokemon,
+    currentPage,
+    setCurrentPage,
+    totalPages,
+  } = useFilterPokemons();
+
+  const handleChangePage = (page: number) => {
+    setCurrentPage(page);
+  };
 
   if (isLoading) return "Loading...";
 
   return (
     <Fragment>
       <Header />
-      <main className="px-36 py-20">
-        <ListPokemons pokemonList={results.slice(0, 20)} />
+      <main className="px-36 py-10 flex flex-col gap-7">
+        <SearchInput onChangeText={handleSearch} />
+        <ListPokemons pokemonList={paginatedPokemon} />
+        <PaginationControls
+          currentPage={currentPage}
+          onPageChange={handleChangePage}
+          totalPages={totalPages}
+        />
       </main>
     </Fragment>
   );

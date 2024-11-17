@@ -4,7 +4,7 @@ interface Props {
 
 export function SearchInput({ onChangeText = () => {} }: Props) {
   return (
-    <div className="w-[600px] mx-auto mb-6">
+    <div className=" w-96 lg:w-[600px] lg:mx-auto mb-6">
       <div className="relative">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg

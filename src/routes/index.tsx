@@ -33,7 +33,7 @@ function HomePage() {
   return (
     <Fragment>
       <Header />
-      <main className="px-36 py-10 flex flex-col gap-7">
+      <main className="px-4 lg:px-36 py-10 flex flex-col gap-7">
         <SearchInput onChangeText={handleSearch} />
         <ListPokemons pokemonList={paginatedPokemon} />
         <PaginationControls

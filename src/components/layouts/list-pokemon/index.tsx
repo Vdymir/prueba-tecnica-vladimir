@@ -6,7 +6,7 @@ interface Props {
 }
 export function ListPokemons({ pokemonList }: Props) {
   return (
-    <section className="grid grid-cols-4 gap-8">
+    <section className="grid grid-cols-2 lg:grid-cols-4 gap-8">
       {pokemonList.map((item) => {
         const urlPath = item.url.split("/");
         const id = urlPath[urlPath.length - 2];

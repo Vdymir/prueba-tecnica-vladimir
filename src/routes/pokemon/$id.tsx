@@ -25,7 +25,6 @@ function PokemonsByIdPage() {
     <main
       className={`${typeColors[mainType]} bg-opacity-60 h-[100dvh] w-[100dvw] relative overflow-hidden `}
     >
-      <NavBar />
       {listWithSixPokeBalls.map((item) => (
         <img
           key={item.id}
@@ -34,12 +33,13 @@ function PokemonsByIdPage() {
           src="/pokebola-blanca.png"
         />
       ))}
-      <section className="flex items-center justify-between px-52">
-        <div>
-          <h1 className="text-[5rem] text-white font-bold uppercase drop-shadow-2xl">
+      <NavBar />
+      <section className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-52">
+        <div className="text-center lg:text-start gap-5 lg:gap-0">
+          <h1 className="text-4xl lg:text-[5rem] text-white font-bold uppercase drop-shadow-2xl">
             {data.name}
           </h1>
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 my-4">
             {data.types.map(({ type }) => (
               <TypeIcon type={type.name} key={type.name} withName />
             ))}
@@ -57,7 +57,7 @@ function PokemonsByIdPage() {
           <img
             src={`${ENVIRONMENT.image_url}${data.id}.png`}
             alt={data.name}
-            className="drop-shadow-lg shadow-black h-[600px] w-[600px]"
+            className="drop-shadow-lg shadow-black h-96 w-96 lg:h-[600px] lg:w-[600px]"
           />
         </div>
       </section>

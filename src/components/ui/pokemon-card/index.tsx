@@ -21,7 +21,7 @@ export function PokemonCard({ pokemonId }: Props) {
   if (isLoading || !data) {
     return (
       <div role="status" className="max-w-sm animate-pulse flex justify-center">
-        <div className="h-[400px] w-[300px] bg-gray-200 rounded-3xl dark:bg-gray-700"></div>
+        <div className="w-44 h-48 lg:h-[350px] lg:w-[300px] bg-gray-200 rounded-3xl dark:bg-gray-700"></div>
       </div>
     );
   }

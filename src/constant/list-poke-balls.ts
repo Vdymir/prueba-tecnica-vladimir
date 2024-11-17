@@ -1,22 +1,32 @@
 export const listWithSixPokeBalls = [
-  { className: "absolute lg:top-[-100px] lg:right-[-100px] opacity-20", id: 1 },
-  {
-    className: "absolute lg:bottom-[-300px] lg:left-[-50px] opacity-20",
-    id: 2,
-  },
-  { className: "absolute lg:top-0 lg:left-0 opacity-20 h-52 w-52", id: 3 },
   {
     className:
-      "absolute lg:bottom-[-150px] lg:right-[-100px] opacity-20 h-96 w-96",
+      "absolute top-[-200px] right-[-200px] lg:top-[-100px] right-[-100px] opacity-20",
+    id: 1,
+  },
+  {
+    className:
+      "absolute bottom-[-100px] left-[-200px] lg:bottom-[-300px] lg:left-[-50px] opacity-20",
+    id: 2,
+  },
+  {
+    className:
+      "absolute top-[-50px] left-[-50px] lg:top-0 lg:left-0 opacity-20 h-52 w-52",
+    id: 3,
+  },
+  {
+    className:
+      "absolute bottom-[200px] right-[-250px] lg:bottom-[-150px] lg:right-[-100px] opacity-20 h-96 w-96",
     id: 4,
   },
   {
-    className: "absolute lg:top-[400px] lg:left-[400px] opacity-20 h-52 w-52",
+    className:
+      "absolute hidden lg:flex lg:top-[400px] lg:left-[400px] opacity-20 h-52 w-52",
     id: 5,
   },
   {
     className:
-      "absolute lg:bottom-[50px] lg:right-[400px] opacity-20 h-52 w-52",
+      "absolute top-44 lg:bottom-[50px] lg:right-[400px] opacity-20 h-52 w-52",
     id: 6,
   },
 ];

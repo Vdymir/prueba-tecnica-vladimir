@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function NavBar() {
   return (
-    <nav className="flex justify-center items-center">
+    <nav className="flex justify-center z-30 items-center">
       <Link to="/">
         <img
           alt="pokemon-logo"

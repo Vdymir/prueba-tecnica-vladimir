@@ -6,12 +6,12 @@ interface Props {
 }
 export default function ListPokemons({ pokemonList }: Props) {
   return (
-    <div className="grid grid-cols-4 gap-8">
+    <section className="grid grid-cols-4 gap-8">
       {pokemonList.map((item) => {
         const urlPath = item.url.split("/");
         const id = urlPath[urlPath.length - 2];
         return <PokemonCard pokemonId={id} />;
       })}
-    </div>
+    </section>
   );
 }

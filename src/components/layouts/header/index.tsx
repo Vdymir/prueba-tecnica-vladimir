@@ -22,11 +22,11 @@ export default function Header() {
 
   return (
     <header
-      className={`${typeColors[mainType]} bg-opacity-50 h-[650px] rounded-b-full overflow-hidden relative`}
+      className={`${typeColors[mainType]} bg-opacity-50 h-[750px] rounded-b-full overflow-hidden relative transition-all`}
     >
       <NavBar />
       {!isPending && data ? (
-        <div className="flex items-center justify-center gap-14 mt-9">
+        <div className="flex items-center justify-center gap-14 animate-fade">
           <div className="w-96 flex flex-col gap-4">
             <h1 className="font-bold text-6xl text-white capitalize drop-shadow">
               {data.name}
@@ -47,7 +47,7 @@ export default function Header() {
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
               alt={data.name}
-              className="drop-shadow-lg shadow-black h-[400px] w-[400px]"
+              className="drop-shadow-lg shadow-black h-[400px] w-[400px] "
             />
           </div>
           {listPokeBolas.map((item) => (

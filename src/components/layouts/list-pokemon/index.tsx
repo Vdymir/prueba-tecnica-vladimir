@@ -4,7 +4,7 @@ import { PokemonCard } from "../../ui";
 interface Props {
   pokemonList: PokemonResult[];
 }
-export default function ListPokemons({ pokemonList }: Props) {
+export function ListPokemons({ pokemonList }: Props) {
   return (
     <section className="grid grid-cols-4 gap-8">
       {pokemonList.map((item) => {

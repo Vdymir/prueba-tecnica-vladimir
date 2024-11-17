@@ -1,9 +1,8 @@
 import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
-import Header from "../components/layouts/header";
-import ListPokemons from "../components/layouts/list-pokemon";
 import { PaginationControls, SearchInput } from "../components/ui";
+import { Header, ListPokemons } from "../components/layouts";
 import useFilterPokemons, {
   pokemonsQueryOptions,
 } from "../hooks/useFilterPokemons";

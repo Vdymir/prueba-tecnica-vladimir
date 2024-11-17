@@ -1,12 +1,11 @@
+import { ENVIRONMENT } from "../../constant/environment";
 import {
   Pokemon,
   PokemonPaginationResponse,
 } from "../../interfaces/pokemon-response.interface";
 
 export async function getListPokemons() {
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0`
-  );
+  const response = await fetch(`${ENVIRONMENT.api_url}?limit=1000&offset=0`);
   if (!response.ok) {
     throw new Error("Failed to fetch List Pokémon");
   }
@@ -14,7 +13,7 @@ export async function getListPokemons() {
 }
 
 export async function getPokemonById(id: number) {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+  const response = await fetch(`${ENVIRONMENT.api_url}/${id}/`);
   if (!response.ok) {
     throw new Error("Failed to fetch Pokémon by id");
   }

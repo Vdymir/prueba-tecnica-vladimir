@@ -4,24 +4,8 @@ import { getPokemonById } from "../../services";
 import { typeColors } from "../../lib/typeColor";
 import { NavBar } from "../../components/layouts";
 import { TypeIcon } from "../../components/ui";
-
-const listPokeBolas = [
-  { className: "absolute top-[-100px] right-[-100px] opacity-20", id: 1 },
-  { className: "absolute bottom-[-300px] left-[-50px] opacity-20", id: 2 },
-  { className: "absolute top-0 left-0 opacity-20 h-52 w-52", id: 3 },
-  {
-    className: "absolute bottom-[-150px] right-[-100px] opacity-20 h-96 w-96",
-    id: 4,
-  },
-  {
-    className: "absolute top-[400px] left-[400px] opacity-20 h-52 w-52",
-    id: 5,
-  },
-  {
-    className: "absolute bottom-[50px] right-[400px] opacity-20 h-52 w-52",
-    id: 5,
-  },
-];
+import { ENVIRONMENT } from "../../constant/environment";
+import { listWithSixPokeBalls } from "../../constant/list-poke-balls";
 
 export const Route = createFileRoute("/pokemon/$id")({
   component: PokemonsByIdPage,
@@ -42,7 +26,7 @@ function PokemonsByIdPage() {
       className={`${typeColors[mainType]} bg-opacity-60 h-[100dvh] w-[100dvw] relative overflow-hidden `}
     >
       <NavBar />
-      {listPokeBolas.map((item) => (
+      {listWithSixPokeBalls.map((item) => (
         <img
           key={item.id}
           alt="poke-bola"
@@ -71,7 +55,7 @@ function PokemonsByIdPage() {
         </div>
         <div>
           <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
+            src={`${ENVIRONMENT.image_url}${data.id}.png`}
             alt={data.name}
             className="drop-shadow-lg shadow-black h-[600px] w-[600px]"
           />

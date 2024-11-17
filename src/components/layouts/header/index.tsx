@@ -4,16 +4,11 @@ import { NavBar } from "../navbar";
 import { getPokemonById } from "../../../services";
 import { typeColors } from "../../../lib/typeColor";
 import { TypeIcon } from "../../ui";
+import { listWithFourPokeBalls } from "../../../constant/list-poke-balls";
 
 const randomNumber = getRandomNumber(1, 1000);
-const listPokeBolas = [
-  { className: "absolute top-[-100px] right-[-50px] opacity-35", id: 1 },
-  { className: "absolute bottom-[-100px] left-0 opacity-35", id: 2 },
-  { className: "absolute top-24 left-0 opacity-35 h-52 w-52", id: 3 },
-  { className: "absolute bottom-24 right-[250px] opacity-35 h-52 w-52", id: 4 },
-];
 
-export default function Header() {
+export function Header() {
   const { isPending, data } = useQuery({
     queryKey: ["pokemon", randomNumber],
     queryFn: () => getPokemonById(randomNumber),
@@ -50,7 +45,7 @@ export default function Header() {
               className="drop-shadow-lg shadow-black h-[400px] w-[400px] "
             />
           </div>
-          {listPokeBolas.map((item) => (
+          {listWithFourPokeBalls.map((item) => (
             <img
               key={item.id}
               src="/pokebola-blanca.png"

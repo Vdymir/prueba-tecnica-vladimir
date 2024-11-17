@@ -4,22 +4,11 @@ import { getPokemonById } from "../../../services";
 import { TypeIcon } from "../type-icon";
 import { typeGradient } from "../../../lib/typeGradient";
 import { Link } from "@tanstack/react-router";
+import { listWithThreePokeBalls } from "../../../constant/list-poke-balls";
 
 interface Props {
   pokemonId: string;
 }
-
-const listPokeBolas = [
-  { className: "absolute top-20 right-[-100px] opacity-10 h-60 w-60", id: 1 },
-  {
-    className: "absolute bottom-[-40px] left-[-40px] opacity-10 h-32 w-32",
-    id: 2,
-  },
-  {
-    className: "absolute top-[-40px] left-[-40px] opacity-10 h-32 w-32",
-    id: 2,
-  },
-];
 
 export function PokemonCard({ pokemonId }: Props) {
   const { isLoading, data } = useQuery({
@@ -47,7 +36,7 @@ export function PokemonCard({ pokemonId }: Props) {
         <div
           className={`${typeGradient[type]} h-[350px] w-[300px] rounded-3xl border-[0.3px] border- border-opacity-50 flex flex-col items-center p-3 relative overflow-hidden`}
         >
-          {listPokeBolas.map((item) => (
+          {listWithThreePokeBalls.map((item) => (
             <img
               key={item.id}
               alt="poke-bola"
